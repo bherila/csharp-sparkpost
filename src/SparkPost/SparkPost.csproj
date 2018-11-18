@@ -3,7 +3,14 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AzureFunctionsVersion>v2</AzureFunctionsVersion>
     <NoWarn>NU1605</NoWarn>
-    <PackageName>SparkPost.DotNetCore</PackageName>
+    <PackageId>SparkPost.DotNetCore</PackageId>
+    <Description>Sparkpost API client supporting .NET Core 2.0</Description>
+    <AssemblyName>SparkPost.DotNetCore</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RepositoryUrl>https://github.com/bherila/csharp-sparkpost.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/bherila/csharp-sparkpost</PackageProjectUrl>
+    <PackageTags>sparkpost,mail,email</PackageTags>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>bin\Debug\netstandard2.0\bin\SparkPost.xml</DocumentationFile>
