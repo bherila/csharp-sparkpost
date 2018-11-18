@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Web;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace SparkPost
 {
@@ -34,9 +35,17 @@ namespace SparkPost
             if (content != null)
             {
                 result.Data = Convert.ToBase64String(content);
-                result.Type = MimeMapping.GetMimeMapping(name);
-                result.Name = name;
-            };
+	            if (new FileExtensionContentTypeProvider().TryGetContentType(name, out var contentType))
+	            {
+		            result.Type = contentType;
+	            }
+	            else
+	            {
+		            result.Type = "application/octet-stream";
+	            }
+
+	            result.Name = name;
+            }
             return result;
         }
 
